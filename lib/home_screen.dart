@@ -1,36 +1,61 @@
 import 'package:flutter/material.dart';
 
+// a Stateless Widget displays two images and customized text
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-  
-  return  Scaffold(
-    appBar: AppBar(),
-    body: const Column(
-      children: [
-        Center(
-          child: Row(
-            mainAxisAlignment :MainAxisAlignment.center,
+    return Scaffold(
+      // appbar to show title
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 33, 229, 243),
+        title: const Center(
+          child: Text("My First Project",
+              style:
+                  TextStyle(fontFamily: "Suwannaphum", color: Colors.blueGrey)),
+        ),
+      ),
+      // column widget has a row widget with 2 images and Text widget
+      body: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-             
-              Image(image: 
-              NetworkImage("https://asset.gecdesigns.com/img/wallpapers/valentine-scenery-beautiful-love-nature-wallpaper-sr08022401-1707486407752-cover.webp")  
-               , fit: BoxFit.cover, width: 150, height: 150,),
-              SizedBox(width: 10,),
-              Image(image: 
-              NetworkImage("https://cdn.prod.website-files.com/63a02e61e7ffb565c30bcfc7/65ea95887efa5c72ece1abb0_most%20beautiful%20landscapes%20in%20the%20world-p-1080.webp")   
-              , fit: BoxFit.cover,width: 150, height: 150,)
+              //NetworkImage
+              Image(
+                image:
+                    NetworkImage("https://picsum.photos/seed/picsum/200/300"),
+                fit: BoxFit.cover,
+                width: 150,
+                height: 150,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              //AssetImage
+              Image(
+                image: AssetImage("assets/images/img2.jpg"),
+                fit: BoxFit.cover,
+                width: 150,
+                height: 150,
+              )
             ],
           ),
-        ),
-        SizedBox(height: 30,),
-        Text(" 2 Beautiful Images " 
-        , style: TextStyle(color: Colors.amber , fontSize: 20 , fontWeight: FontWeight.bold),)
-      ],
-    ),
-);
-
+          SizedBox(
+            height: 30,
+          ),
+          Text(
+            "The two images are displayed",
+            style: TextStyle(
+                fontFamily: "Suwannaphum",
+                color: Colors.blueGrey,
+                fontSize: 20,
+                fontWeight: FontWeight.bold),
+          )
+        ],
+      ),
+    );
   }
-
 }
