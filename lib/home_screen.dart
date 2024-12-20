@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         title: const Center(
           child: Text("My First Project",
               style:
-                  TextStyle(fontFamily: "Suwannaphum", color: Colors.blueGrey)),
+                  TextStyle( color: Colors.blueGrey)),
         ),
       ),
       // column widget has a row widget with 2 images and Text widget
@@ -49,7 +49,6 @@ class HomeScreen extends StatelessWidget {
           Text(
             "The two images are displayed",
             style: TextStyle(
-                fontFamily: "Suwannaphum",
                 color: Colors.blueGrey,
                 fontSize: 20,
                 fontWeight: FontWeight.bold),
